@@ -12,9 +12,6 @@ import de.agilecoders.wicket.webjars.request.resource.WebjarsJavaScriptResourceR
 import de.costefrias.logbuch.menu.Menu;
 
 public abstract class BasePage extends WebPage {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	public BasePage() {
@@ -28,10 +25,10 @@ public abstract class BasePage extends WebPage {
 	}
 
 	public void initBasePage() {
-		add(new HtmlTag("html"));
+		queue(new HtmlTag("html"));
 
-		add(new MetaTag("description", Model.of("description"), Model.of("Lobbuch - Akzeptanztest")));
-		add(new MetaTag("author", Model.of("author"), Model.of("Softwateentwicklung- Testing")));
+		queue(new MetaTag("description", Model.of("description"), Model.of("Lobbuch - Akzeptanztest")));
+		queue(new MetaTag("author", Model.of("author"), Model.of("Softwateentwicklung- Testing")));
 	}
 
 	@Override
