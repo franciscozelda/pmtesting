@@ -25,10 +25,11 @@ public abstract class BasePage extends WebPage {
 	}
 
 	public void initBasePage() {
-		queue(new HtmlTag("html"));
+		HtmlTag htmlTag = new HtmlTag("html");
+		add(htmlTag);
 
-		queue(new MetaTag("description", Model.of("description"), Model.of("Lobbuch - Akzeptanztest")));
-		queue(new MetaTag("author", Model.of("author"), Model.of("Softwateentwicklung- Testing")));
+		htmlTag.add(new MetaTag("description", Model.of("description"), Model.of("Lobbuch - Akzeptanztest")));
+		htmlTag.add(new MetaTag("author", Model.of("author"), Model.of("Softwateentwicklung- Testing")));
 	}
 
 	@Override
